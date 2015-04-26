@@ -34,6 +34,17 @@ namespace ConsoleApp
         {
             return value1 + value2;
         }
-
+        static int Subtract(int value1, int value2)
+        {
+            return value1 - value2;
+        }
+        static int MULTIPLY(int value1, int value2)
+        {
+            return value1 * value2;
+        }
+        static int DIVIDE(int value1, int value2)
+        {
+            return value1 / value2;
+        }
     }
 }
