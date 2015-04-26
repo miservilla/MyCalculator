@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Console.Write("Enter value 1: ");
+            string Value1Enter = Console.ReadLine();
+            int Value1 = Convert.ToInt32(Value1Enter);
+
+            Console.Write("Enter value 2: ");
+            string Value2Enter = Console.ReadLine();
+            int Value2 = Convert.ToInt32(Value2Enter);
+
+            Console.Write("Enter operation: A (add), S (subtract), M (multiply), D (divide)");
+            string operation = Console.ReadLine();
+
+
+            int total = Add(Value1, Value2);
+            Console.WriteLine("The answer is: " + total);
+
+
+        }
+
+        static int Add(int value1, int value2)
+        {
+            return value1 + value2;
+        }
+
+    }
+}
