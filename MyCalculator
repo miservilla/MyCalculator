@@ -12,13 +12,13 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            Int32 Value1;
-            Int32 Value2;
+            Double Value1;
+            Double Value2;
 
             Console.Write("Enter value 1: ");
             string Value1Enter = Console.ReadLine();
 
-            while (!Int32.TryParse(Value1Enter, out Value1))
+            while (!Double.TryParse(Value1Enter, out Value1))
             {
                 Console.WriteLine("Not a valid entry!");
 
@@ -30,7 +30,7 @@ namespace ConsoleApp
                 Console.Write("Enter value 2: ");
                 String Value2Enter = Console.ReadLine();
 
-            while (!Int32.TryParse(Value2Enter, out Value2))
+            while (!Double.TryParse(Value2Enter, out Value2))
             {
                 Console.WriteLine("Not a valid entry!");
 
@@ -47,22 +47,22 @@ namespace ConsoleApp
             switch (operation)
             {
                 case "A" :
-                      int totalA = Add(Value1, Value2);
+                      Double totalA = Add(Value1, Value2);
                       Console.WriteLine("The answer is: " + totalA);
                       break;
 
                 case "S" :
-                      int totalS = Subtract(Value1, Value2);
+                      Double totalS = Subtract(Value1, Value2);
                       Console.WriteLine("The answer is: " + totalS);
                       break;
 
                 case "M" :
-                      int totalM = Multiply(Value1, Value2);
+                      Double totalM = Multiply(Value1, Value2);
                       Console.WriteLine("The answer is: " + totalM);
                       break;
 
                  case "D" :
-                      int totalD = Divide(Value1, Value2);
+                      Double totalD = Divide(Value1, Value2);
                       Console.WriteLine("The answer is: " + totalD);
                       break;
 
@@ -75,19 +75,19 @@ namespace ConsoleApp
 
         }
 
-        static int Add(int value1, int value2)
+        static Double Add(Double value1, Double value2)
         {
             return value1 + value2;
         }
-        static int Subtract(int value1, int value2)
+        static Double Subtract(Double value1, Double value2)
         {
             return value1 - value2;
         }
-        static int Multiply(int value1, int value2)
+        static Double Multiply(Double value1, Double value2)
         {
             return value1 * value2;
         }
-        static int Divide(int value1, int value2)
+        static Double Divide(Double value1, Double value2)
         {
             return value1 / value2;
         }
