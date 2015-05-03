@@ -12,20 +12,65 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            Int32 Value1;
+            Int32 Value2;
+
             Console.Write("Enter value 1: ");
             string Value1Enter = Console.ReadLine();
-            int Value1 = Convert.ToInt32(Value1Enter);
 
-            Console.Write("Enter value 2: ");
-            string Value2Enter = Console.ReadLine();
-            int Value2 = Convert.ToInt32(Value2Enter);
+            while (!Int32.TryParse(Value1Enter, out Value1))
+            {
+                Console.WriteLine("Not a valid entry!");
 
-            Console.Write("Enter operation: A (add), S (subtract), M (multiply), D (divide)");
-            string operation = Console.ReadLine();
+                Console.Write("Enter value 1: ");
+                Value1Enter = Console.ReadLine();
+
+            }
+
+                Console.Write("Enter value 2: ");
+                String Value2Enter = Console.ReadLine();
+
+            while (!Int32.TryParse(Value2Enter, out Value2))
+            {
+                Console.WriteLine("Not a valid entry!");
+
+                Console.Write("Enter value 2: ");
+                Value2Enter = Console.ReadLine();
+
+            }
 
 
-            int total = Add(Value1, Value2);
-            Console.WriteLine("The answer is: " + total);
+            Console.Write("Enter operation: A (add), S (subtract), M (multiply), D (divide): ");
+            string operationAnyCase = Console.ReadLine();
+            string operation = operationAnyCase.ToUpper();
+
+            switch (operation)
+            {
+                case "A" :
+                      int totalA = Add(Value1, Value2);
+                      Console.WriteLine("The answer is: " + totalA);
+                      break;
+
+                case "S" :
+                      int totalS = Subtract(Value1, Value2);
+                      Console.WriteLine("The answer is: " + totalS);
+                      break;
+
+                case "M" :
+                      int totalM = Multiply(Value1, Value2);
+                      Console.WriteLine("The answer is: " + totalM);
+                      break;
+
+                 case "D" :
+                      int totalD = Divide(Value1, Value2);
+                      Console.WriteLine("The answer is: " + totalD);
+                      break;
+
+                 default:
+                      Console.WriteLine("No such operation");
+                      break;
+
+            }
 
 
         }
@@ -38,11 +83,11 @@ namespace ConsoleApp
         {
             return value1 - value2;
         }
-        static int MULTIPLY(int value1, int value2)
+        static int Multiply(int value1, int value2)
         {
             return value1 * value2;
         }
-        static int DIVIDE(int value1, int value2)
+        static int Divide(int value1, int value2)
         {
             return value1 / value2;
         }
